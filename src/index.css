@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --apple-canvas: #F5F5F7;
+  --apple-card: #FFFFFF;
+  --apple-text-primary: #1D1D1F;
+  --apple-text-secondary: #86868B;
+  --apple-blue: #0071E3;
+  --apple-blue-hover: #0077ED;
+  --apple-indigo: #5E5CE6;
+  --apple-purple: #AF52DE;
+  --apple-green: #34C759;
+  --apple-orange: #FF9500;
+  --apple-red: #FF3B30;
+  --apple-border: rgba(0, 0, 0, 0.08);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", -apple-system-subheadline, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: var(--apple-canvas);
+  color: var(--apple-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.011em;
+}
+
+/* Ensure form controls default to clean Apple light styling */
+input:not([type="checkbox"]):not([type="radio"]):not([class*="bg-"]), 
+select:not([class*="bg-"]), 
+textarea:not([class*="bg-"]) {
+  background-color: #ffffff;
+  color: #1d1d1f;
+}
+
+/* Apple Frosted Glass (Vibrancy - Optimized for 60-120 FPS Compositing) */
+.apple-glass {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.04);
+}
+
+.apple-glass-dark {
+  background: rgba(22, 22, 24, 0.90);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Apple Smooth Card */
+.apple-card {
+  background: #ffffff;
+  border-radius: 1.5rem; /* 24px */
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.03), 0 0 1px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apple-card:hover {
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Apple Segmented Control */
+.apple-segmented {
+  background: rgba(118, 118, 128, 0.12);
+  border-radius: 9999px;
+  padding: 3px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Apple macOS Window Traffic Lights */
+.traffic-light-red {
+  background-color: #FF5F56;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+}
+.traffic-light-yellow {
+  background-color: #FFBD2E;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+}
+.traffic-light-green {
+  background-color: #27C93F;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+}
+
+/* GitHub canvas dot pattern for diagram canvas */
+.bg-dot-pattern {
+  background-color: #0d1117;
+  background-image: radial-gradient(#21262d 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* macOS Refined Scrollbars */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 9999px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.32);
+}
+
+/* Smooth Apple Pulse animations */
+@keyframes applePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.85;
+  }
+}
+
+.animate-apple-pulse {
+  animation: applePulse 2.5s infinite ease-in-out;
+}
+
+/* Smooth HTML Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Floating Elements & Chips Animation */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(8px) rotate(-1deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+}
